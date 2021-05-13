@@ -1,0 +1,25 @@
+.wrapperSubTitle {
+  display: flex;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.subTitleName {
+  margin: 30px 281px 0 16px;
+}
+
+.subTitleType {
+  margin: 27px 61px 0 0;
+}
+
+.subTitleResult {
+  margin: 27px 99px 0 0;
+}
+
+.subTitleDate {
+  margin: 27px 106px 0 0;
+}
+
+.subTitleStatus {
+  margin-top: 27px;
+}
