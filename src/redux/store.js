@@ -1,7 +1,13 @@
-// import { createStore } from "redux";
-// const initialState = {
-//   data: [],
-// };
-// const reducer = (initialState, { type, payload }) => ;
-// const store = createStore(reducer);
-// export default store;
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import notificationsReducer from "./data/data-reducer";
+
+const middleware = [...getDefaultMiddleware()];
+
+const store = configureStore({
+  reducer: {
+    data: notificationsReducer,
+  },
+  middleware,
+});
+
+export default store;

@@ -1,12 +1,7 @@
-// import axios from "axios";
+import axios from "axios";
 
-// function dataApiRequest() {
-//     return axios
-//         .get(`https://stage.onboardlms.io/notification/get/MAkTQaSNeZI6`)
-//         .then((res) => {
-//             const data = res.data.notifications;
-//             console.log(data);
-//         }
-//     }
-
-// export default dataApiRequest
+export const dataApiRequest = () => {
+  return axios
+    .get(`https://stage.onboardlms.io/notification/get/MAkTQaSNeZI6`)
+    .then(({ data }) => data.notifications);
+};
