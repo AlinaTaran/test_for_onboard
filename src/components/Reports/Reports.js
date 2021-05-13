@@ -3,13 +3,17 @@ import s from "./Report.module.css";
 function Reports({ data }) {
   return (
     <ul className={s.dataList}>
-      {data.map(({ id, date, type, moduleName, status, learner }) => (
+      {data.map(({ id, date, type, moduleName, learner }) => (
         <li key={id} className={s.dataListItem}>
-          <span className={s.name}>{learner.name}</span>
-          <span className={s.name}>{moduleName}</span>
-          <span className={s.type}>{type}</span>
-          <span className={s.date}>{date}</span>
-          <span className={s.status}>{status}</span>
+          <p className={s.name}>{learner.name}</p>
+          <p className={s.moduleName}>{moduleName}</p>
+          <p className={s.type}>Task</p>
+          <p className={s.result}>{type}</p>
+          <p className={s.date}>{date}</p>
+
+          <button className={s.status}>
+            <span className={s.btnSubTitle}>New</span>
+          </button>
         </li>
       ))}
     </ul>

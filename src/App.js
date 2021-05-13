@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
+// import { connect } from "react-redux";
 
 import Container from "./components/Container";
 import Reports from "./components/Reports";
-import Title from "./components/Title.js";
+import Title from "./components/Title";
 import Wrapper from "./components/Wrapper";
 import SubTitle from "./components/SubTitle";
 
