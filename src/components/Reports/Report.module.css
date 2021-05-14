@@ -29,27 +29,30 @@
 }
 
 .result {
-  padding: 2px 0px 0px 18px;
+  position: relative;
+  padding: 2px 0px 0px 15px;
   width: 65px;
   color: white;
-
   height: 18px;
-  background: blue;
+  background: #006fff;
+
   border-radius: 20px;
   margin-right: 67px;
 }
 
 .passed {
   composes: result;
-  background: #15ff00;
+  background: #05c03c;
 }
+
 .failed {
   composes: result;
   background: #ff0000;
 }
+
 .essay {
   composes: result;
-  background-color: yellow;
+  background: #ffcb02;
 }
 
 .moduleName {
