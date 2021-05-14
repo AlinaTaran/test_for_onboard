@@ -6,15 +6,19 @@ import { fetchNotifications } from "../../redux/data/data-operations";
 
 function Reports() {
   const dispatch = useDispatch();
-  const [status, setStatus] = useState("New");
+  const [status, setStatus] = useState("");
   const notifications = useSelector((state) => state.data);
 
   function unique(arr) {
     return Array.from(new Set(arr));
   }
 
-  function handleStatus() {
+  function handleStatus(status) {
     setStatus("Checked");
+  }
+
+  function formatString(string) {
+    return string.length < 25 ? string : `${string.slice(0, 25)}...`;
   }
 
   useEffect(() => {
@@ -23,18 +27,24 @@ function Reports() {
 
   return (
     <ul className={s.dataList}>
-      {unique(notifications).map(({ id, date, type, moduleName, learner }) => (
-        <li key={id} className={s.dataListItem}>
-          <p className={s.name}>{learner.name}</p>
-          <p className={s.moduleName}>{moduleName}</p>
-          <p className={s.type}>Task</p>
-          <p className={s.result}>{type}</p>
-          <p className={s.date}>{date}</p>
-          <button onClick={() => handleStatus()} className={s.status}>
-            <span className={s.btnSubTitle}>{status}</span>
-          </button>
-        </li>
-      ))}
+      {unique(notifications).map(
+        ({ id, date, type, moduleName, learner, status }) => (
+          <li key={id} className={s.dataListItem}>
+            <p className={s.name}>{learner.name}</p>
+            <p className={s.moduleName}>
+              <p data-tooltip={moduleName}>{formatString(moduleName)}</p>
+            </p>
+            <p className={s.type}>Task</p>
+            <p className={s.result}>{type}</p>
+            <p className={s.date}>{date}</p>
+            <button onClick={() => handleStatus(status)} className={s.status}>
+              <span className={s.btnSubTitle}>
+                {status === 1 ? "Checked" : "New"}
+              </span>
+            </button>
+          </li>
+        )
+      )}
     </ul>
   );
 }
