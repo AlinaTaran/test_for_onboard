@@ -32,21 +32,27 @@
   padding: 2px 0px 0px 18px;
   width: 65px;
   color: white;
+
   height: 18px;
-  background: #ff0000;
+  background: blue;
   border-radius: 20px;
   margin-right: 67px;
 }
 
 .passed {
+  composes: result;
+
   background: #15ff00;
 }
 .failed {
-  background: blue;
+  composes: result;
+  background: #ff0000;
 }
 .essay {
+  composes: result;
   background-color: yellow;
 }
+
 .moduleName {
   width: 165px;
 }
@@ -58,20 +64,17 @@
   border: none;
   background-color: white;
   outline: none;
-  background: #f85a40;
-  border-radius: 50%;
   cursor: pointer;
 }
 
 .new {
-  border-radius: 50%;
-  background: #f85a40;
+  composes: status;
+  background-image: url(./images/elips.png);
 }
 
 .checked {
-  /* background-image: url(./images/arrow.png); */
-  border-radius: 50%;
-  background: #40f849;
+  composes: status;
+  background-image: url(./images/Vector.png);
 }
 
 .btnSubTitle {
