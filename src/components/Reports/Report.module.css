@@ -41,7 +41,6 @@
 
 .passed {
   composes: result;
-
   background: #15ff00;
 }
 .failed {

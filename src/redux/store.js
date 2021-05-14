@@ -1,11 +1,11 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import notificationsReducer from "./data/data-reducer";
+import reports from "./modules/reports";
 
 const middleware = [...getDefaultMiddleware()];
 
 const store = configureStore({
   reducer: {
-    data: notificationsReducer,
+    reports,
   },
   middleware,
 });
