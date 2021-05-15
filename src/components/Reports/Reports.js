@@ -9,7 +9,7 @@ function Reports() {
 
   useEffect(() => {
     dispatch(fetchReports());
-  }, []);
+  }, [dispatch]);
 
   function formatString(string) {
     return string.length < 25 ? string : `${string.slice(0, 25)}...`;
